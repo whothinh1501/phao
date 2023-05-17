@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+   <div id="header">
+    <div id="logo">
+        <img src="/image/logo7.png" alt="">
+    </div>
+    <div>Trang chủ</div>
+    <div>Giới thiệu</div>
+    <div>Dịch vụ</div>
+    <div onclick="openModal()">Ký gửi hàng hóa</div>
+    <div>Liên hệ</div>
+   </div>
+   <div id="main">
+    <div id="form">form</div>
+    <div id="rules">
+        <h3>Qui định thanh toán</h3>
+        <ul>
+            <li>Khách cọc từ 70% - 100% số tiền của đơn hàng</li>
+            <li>Hàng về sau 24-48 tiếng kể từ khi kho Trung Quốc ký nhận</li>
+            <li>Shop sẽ thanh lý đơn hàng nếu sau 1 tuần khách hàng không thanh toán tiền nhận hàng</li>
+        </ul>
+    </div>
+   </div>
+   <div>
+    <!-- <button onclick="openModal()">Mở Modal Form</button> -->
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Thông tin kiện hàng hóa gửi</h3>
+            <form>
+                <label for="serial">Số Serial:</label>
+                <input type="text" id="serial" name="serial" required><br>
+
+                <label for="description">Mô tả kiện hàng:</label>
+                <input type="text" id="description" name="description" required><br>
+
+                <label for="image">Hình ảnh:</label>
+                <input type="file" id="image" name="image"><br>
+
+                <label for="weight">Trọng lượng:</label>
+                <input type="text" id="weight" name="weight" required><br>
+
+                <label for="shipping-cost">Chi phí vận chuyển:</label>
+                <input type="text" id="shipping-cost" name="shipping-cost" required><br>
+
+                <input type="submit" value="Xác nhận">
+            </form>
+        </div>
+    </div>
+   </div>
+   <div id="footer">  Mã số: 21092661 - Họ tên: Nguyễn Trần Hữu Thịnh</div>
+   <script src="/js/script.js"></script>
+</body>
+</html>

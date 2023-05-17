@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tiêu đề trang</title>
+    <style>
+        /* CSS cho modal và bảng */
+        /* ... */
+    </style>
+</head>
+<body>
+    <!-- Modal và form -->
+    <!-- ... -->
+
+    <!-- Bảng hiển thị dữ liệu -->
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Số Serial</th>
+                <th>Mô tả kiện hàng</th>
+                <th>Hình ảnh</th>
+                <th>Trọng lượng</th>
+                <th>Chi phí vận chuyển</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dữ liệu sẽ được cập nhật ở đây -->
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Biến lưu trữ dữ liệu kiện hàng
+        var shipments = [];
+
+        // JavaScript và jQuery để kiểm tra dữ liệu nhập và xử lý form
+        function validateForm() {
+            // Kiểm tra dữ liệu nhập và xử lý form
+            // ...
+
+            // Lấy giá trị từ form
+            var serial = $("#serial").val();
+            var description = $("#description").val();
+            var image = $("#image").val();
+            var weight = parseFloat($("#weight").val());
+            var shippingCost = parseFloat($("#shipping-cost").val());
+
+            // Tạo đối tượng kiện hàng mới
+            var shipment = {
+                serial: serial,
+                description: description,
+                image: image,
+                weight: weight,
+                shippingCost: shippingCost
+            };
+
+            // Thêm đối tượng kiện hàng vào mảng
+            shipments.push(shipment);
+
+            // Cập nhật bảng hiển thị dữ liệu
+            updateTable();
+
+            // Đóng modal sau khi xử lý form
+            closeModal();
+
+            return false; // Ngăn chặn việc tải lại trang
+        }
+
+        // Cập nhật bảng hiển thị dữ liệu
+        function updateTable() {
+            var tableBody = $("#data-table tbody");
+
+            // Xóa dữ liệu cũ trong bảng
+            tableBody.empty();
+
+            // Duyệt qua mảng kiện hàng và thêm dữ liệu vào bảng
+            for (var i = 0; i < shipments.length; i++) {
+                var shipment = shipments[i];
+
+                var row = "<tr>";
+                row += "<td>" + shipment.serial + "</td>";
+                row += "<td>" + shipment.description + "</td>";
+                row += "<td>" + shipment.image + "</td>";
+                row += "<td>" + shipment.weight + "</td>";
+                row += "<td>" + shipment.shippingCost + "</td>";
+                row += "</tr>";
+
+                tableBody.append(row);
+            }
+        }
+
+        // ... Các phần JavaScript và jQuery khác
+
+    </script>
+</body>
+</html>
